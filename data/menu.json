@@ -1,0 +1,55 @@
+[
+    {
+        "id": "1",
+        "name": "Todas as categorias",
+        "type": "NORMAL",
+        "url": "",
+        "childs": [
+            {
+                "id": "1-1",
+                "name": "Camisetas",
+                "type": "NORMAL",
+                "url": "/categoria/camisetas"
+            },
+            {
+                "id": "1-2",
+                "name": "Calças",
+                "type": "NORMAL",
+                "url": "/categoria/camisetas"
+            },
+            {
+                "id": "1-3",
+                "name": "Bermudas",
+                "type": "NORMAL",
+                "url": "/categoria/camisetas"
+            },
+            {
+                "id": "1-4",
+                "name": "Bonés",
+                "type": "NORMAL",
+                "url": "/categoria/camisetas"
+            }
+        ]
+    },
+    {
+        "id": "2",
+        "name": "Camisetas",
+        "type": "NORMAL",
+        "url": "/categoria/camisetas",
+        "childs": []
+    },
+    {
+        "id": "3",
+        "name": "Bermudas",
+        "type": "NORMAL",
+        "url": "/categoria/camisetas",
+        "childs": []
+    },
+    {
+        "id": "4",
+        "name": "Bonés",
+        "type": "NORMAL",
+        "url": "/categoria/camisetas",
+        "childs": []
+    }
+]

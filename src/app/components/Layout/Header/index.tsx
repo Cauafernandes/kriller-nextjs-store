@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 import { NotificationBar, Menu } from './components';
@@ -15,7 +16,15 @@ export function Header() {
             title='Voltar a página inicial'
             className='text-black text-[24px]'
           >
-            <h1>Sample Store</h1>
+            <figure>
+              <Image
+                src={'/logo.png'}
+                alt='Logo Kriller'
+                width={200}
+                height={70}
+                quality={100}
+              />
+            </figure>
           </Link>
 
           <input
@@ -49,8 +58,10 @@ export function Header() {
           </div>
         </div>
 
-        <div className='max-w-screen-lg mx-auto py-5'>
-          <Menu />
+        <div className='bg-primary text-white mt-6'>
+          <div className='max-w-screen-lg mx-auto'>
+            <Menu />
+          </div>
         </div>
       </header>
     </>

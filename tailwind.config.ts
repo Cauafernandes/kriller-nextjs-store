@@ -9,6 +9,9 @@ const config: Config = {
   theme: {
     colors: {
       primary: '#214f59',
+      primaryHover: '#4d8f9e',
+
+      secondary: '#EAFAFE',
 
       white: '#FFFFFF',
       black: '#000000',
@@ -26,6 +29,11 @@ const config: Config = {
       gray850: 'rgba(0, 0, 0, 0.2)',
       gray900: 'rgba(0, 0, 0, 0.3)',
       gray950: 'rgba(0, 0, 0, 0.5)',
+
+      pink100: '#FBE7E9',
+      pink300: '#F17179',
+      pink400: '#D34566',
+      pink500: '#F66C85',
     },
 
     extend: {

@@ -8,7 +8,11 @@ export function Menu() {
       <ul className='w-full flex flex-row gap-4'>
         {data.map((item) => (
           <li key={item.id}>
-            <Link href={item.url} title={`Acessar ${item.name}`}>
+            <Link
+              href={item.url}
+              title={`Acessar ${item.name}`}
+              className='block py-4'
+            >
               <span className='text-[14px]'>{item.name}</span>
             </Link>
           </li>

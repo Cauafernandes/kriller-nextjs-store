@@ -18,12 +18,26 @@
 
 body {
   color: rgb(var(--foreground-rgb));
+  font-size: 14px;
   background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+input::placeholder {
+  font-size: 14px;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: #FFFFFF;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #214f59;
 }
 
 @layer utilities {

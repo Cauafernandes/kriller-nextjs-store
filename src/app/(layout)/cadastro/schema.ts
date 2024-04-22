@@ -1,4 +1,8 @@
+import { format, subYears } from 'date-fns';
 import * as zod from 'zod';
+
+const today = new Date();
+const eighteenYearsAgo = subYears(today, 18);
 
 export const schema = zod.object({
   firstName: zod.string().min(3, 'Minimo de 3 caracteres.'),
@@ -14,24 +18,8 @@ export const schema = zod.object({
     .string()
     .min(13, 'Por favor, informe um número válido.')
     .max(15, 'Por favor, informe ao máximo 11 caracteres.'),
-  birthDate: zod
-    .string()
-    .refine((data) => {
-      const [day, month, year] = data.split('/');
-      const formattedDate = `${year}-${month}-${day}`;
-      const birthDate = new Date(formattedDate);
-      const idade = new Date().getFullYear() - birthDate.getFullYear();
-
-      return idade >= 19;
-    }, 'O usuário deve ter mais que 18 anos')
-    .refine((data) => {
-      const [day, month, year] = data.split('/');
-      const formattedDate = `${year}-${month}-${day}`;
-      const birthDate = new Date(formattedDate);
-      const idade = new Date().getFullYear() - birthDate.getFullYear();
-
-      return idade <= 120;
-    }, 'O usuário deve ter menos que 120 anos'),
+  birthDate: zod.date()
+    .max(eighteenYearsAgo, `You must be at least 18 years old to register.`),
   email: zod
     .string()
     .email('Por favor, informe um e-mail válido.')

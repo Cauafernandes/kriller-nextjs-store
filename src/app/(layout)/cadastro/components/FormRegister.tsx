@@ -23,7 +23,6 @@ export default function FormRegister() {
       firstName: '',
       lastName: '',
       document: '',
-      birthDate: '',
       phone: '',
       email: '',
       password: '',
@@ -89,7 +88,7 @@ export default function FormRegister() {
         <div className='flex flex-row gap-6'>
           <Input
             label='Data de nascimento'
-            type='text'
+            type='date'
             placeholder='Digite sua data de nascimento'
             {...register('birthDate')}
             error={errors.birthDate?.message}

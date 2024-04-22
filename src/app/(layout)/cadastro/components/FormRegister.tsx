@@ -1,8 +1,7 @@
 'use client';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { set, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { useState } from 'react';
-import Link from 'next/link';
 
 import { server } from '@/config';
 
@@ -87,22 +86,7 @@ export default function FormRegister() {
           />
         </div>
 
-        <Input
-          label={type === 'PF' ? 'CPF' : 'CNPJ'}
-          type='text'
-          placeholder='Digite seu telefone ou celular'
-          {...register('phone')}
-          error={errors.phone?.message}
-        />
-
         <div className='flex flex-row gap-6'>
-          <Input
-            label='Telefone / Celular'
-            type='text'
-            placeholder='Digite seu telefone ou celular'
-            {...register('phone')}
-            error={errors.phone?.message}
-          />
           <Input
             label='Data de nascimento'
             type='text'
@@ -110,6 +94,25 @@ export default function FormRegister() {
             {...register('birthDate')}
             error={errors.birthDate?.message}
           />
+          <Input
+            label={type === 'PF' ? 'CPF' : 'CNPJ'}
+            type='text'
+            placeholder='Digite seu telefone ou celular'
+            {...register('phone')}
+            error={errors.phone?.message}
+          />
+        </div>
+
+        <div className='flex flex-row gap-6'>
+          <div className='w-full max-w-[50%]'>
+            <Input
+              label='Telefone / Celular'
+              type='text'
+              placeholder='Digite seu telefone ou celular'
+              {...register('phone')}
+              error={errors.phone?.message}
+            />
+          </div>
         </div>
 
         <div className='flex flex-row gap-6'>
@@ -129,14 +132,7 @@ export default function FormRegister() {
           />
         </div>
       </div>
-      <Button className='max-w-[350px] mx-auto mt-8'>Entrar</Button>
-      <Link
-        href='/esqueci-minha-senha'
-        title='Acessar tela para redefinir senha'
-        className='block text-center mt-6 underline transition-all hover:opacity-[0.8]'
-      >
-        Esqueceu sua senha?
-      </Link>
+      <Button className='max-w-[350px] mx-auto mt-8'>Cadastrar</Button>
     </form>
   );
 }
